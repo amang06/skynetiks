@@ -8,8 +8,8 @@
     <title>Skynetiks</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/bg-animation.css">
-    <link type="text/css" rel="stylesheet" href="css/carousel-animation.css">
-    <link rel="stylesheet" href="css/services.css">
+    <!-- <link type="text/css" rel="stylesheet" href="css/carousel-animation.css">
+    <link rel="stylesheet" href="css/services.css"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -18,13 +18,16 @@
 
     <header class="header">
         <a href="" class="logo">Skynetiks</a>
-        <nav class="navbar">
+
+        <nav class="navbar mask">
             <a href="#" class="active">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Solutions</a>
-            <a href="#">Contact Us</a>
+            <!-- <a href="/about">About Us</a> -->
+            <!-- <a href="/solutions">Solutions</a> -->
+            <a href="/contact">Contact Us</a>
             <a href="#">Services</a>
+            <a href="./services/googleworkspace.html">Google Workspace</a>
         </nav>
+        <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
     <section class="home">
@@ -37,13 +40,14 @@
         <div class="home-content">
             <h1>Catalysts of Efficiency</h1>
             <h3>20 years of excellence and trust</h3>
-            <p> Skynetiks is a Google, Acronis Amazon Web Services & Microsoft partner. We have been implementing world class IT consulting and support services since 2003, and have helped
+            <p> Skynetiks is a Google, Amazon Web Services & Microsoft partner. We have been implementing world
+                class IT consulting and support services since 2003, and have helped
                 organizations of all sizes and across industries scale up seamlessly with robust IT solutions and
                 support.
             </p>
             <div class="btn-box">
                 <a href="#" class="btn">Our Services</a>
-                <a href="#" class="btn">Portfolio</a>
+                <a href="#" class="btn">Contact Us</a>
             </div>
         </div>
 
@@ -55,9 +59,8 @@
 
 
     </section>
-    </section>
 
-    <section class="services black-bg">
+    <!-- <section class="services black-bg">
         <div class="void" id="void">
             <div class="crop">
             <ul id="card-list" style="--count: 6;">
@@ -85,14 +88,41 @@
               <div class="a-carousel__face"><span>For you</span></div>
               <div class="a-carousel__face"><span>Just give it</span></div>
               <div class="a-carousel__face"><span>A try</span></div>
-              <!--<div class="carousel__face"><span>And see</span></div>
+              <div class="carousel__face"><span>And see</span></div>
               <div class="carousel__face"><span>How IT Works</span></div>
-              <div class="carousel__face"><span>Woow</span></div> -->
+              <div class="carousel__face"><span>Woow</span></div>
             </div>
           </div>
 
-    </section>
+    </section> -->
 
+    <div class="footer">
+        <p>&copy; <span id="currentYear"></span> <a href="https://shrishtisoftech.com/">Shrishti Softech Solutions Pvt. Ltd.</a></p>
+    </div>
+    <script>
+        let menuIcon = document.getElementById("menu-icon");
+        let navbar = document.querySelector(".navbar");
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle("bx-x");
+            const navLinks = document.querySelectorAll(".navbar a");
+
+            navLinks.forEach(link => {
+                link.style.display = (link.style.display === "block") ? "none" : "block";
+            });
+
+            const logo = document.querySelector(".logo");
+
+            if (logo.style.display === "none") {
+                logo.style.display = "block";
+            } else {
+                logo.style.display = "none";
+            }
+        }
+
+        const currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
 </body>
 
 </html>
